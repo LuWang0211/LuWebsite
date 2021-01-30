@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="{{ url_for('static', filename='all.js') }}"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">WebSiteName</a>
+        <a class="navbar-brand" href="/home#">Home</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="https://github.com/zishuijingw/ResumeClassifier">Github</a></li>
+      </ul>
+    </div>
+</nav>
+
+<div class="jumbotron text-center">
+    <h1>Welcome {{ user_name }} </h1>
+    <h1>Actors Recommendation</h1>
+</div>
+
+  <!-- Main -->
+  <div class="container">
+      <h2>Option One: Based on the type of movies a candidate has acted in</h2>
+      <div class="panel panel-default">
+        <div class="panel-body">Each actor/actress has a field of performance art that they are good at.
+          <p>
+           This recommendation method is based on their resume, from which recommendations system finds out the film types a candidate 
+           will most likely succeed in.
+          </p>
+           <p>
+              This model is trained on 6,405 well-known actors' data. The following are examples of movie genres
+               and the actors who ever cast a role in the corresponding movie genre. 
+            </p>
+          <div>
+              <div class="row" style="margin-right: 6px">
+                {% for key, value in sample_movie_genres.items() %}
+                <div class="col-md-2">
+                  <div class="panel panel-default genre" style="width: 18rem; " data-key="{{key}}">
+                      <div class="panel-heading">{{value.name}}</div>
+                      <div class="panel-body" style="height: 18em">
+                          <ul class="list-group">
+                          </ul>
+                      </div>
+                    </div>
+                </div>
+                {% endfor %}
+              </div>
+          </div>  
+        </div>
+        
+      </div>
+      <form action='/multilabel', method='POST'>
+        <button type="submit" class="btn btn-lg btn-block" style= "width: 32vw;">Get Recommendations</button>
+      </form>
+  </div>
+
+  <div class="container">
+      <h2>Option two: Based on LDA topical model</h2>
+      <div class="panel panel-default">
+        <!-- <div class="panel-heading">Based on LDA topical model</div> -->
+        <div class="panel-body">The LDA topic model is unsupervised learning of the actor/actress information. It tries to group together similiar actors based on the text in their resumes</div>
+      </div>
+      <form action='/results_lda', method='POST'>
+        <a class="btn btn-primary btn-lg" href="/results_lda" role="button" style="width: 30vw;">Explore LDA</a>
+        <p></p>
+        <a class="btn btn-primary btn-lg" href="/recommendations_lda" role="button" style="width: 30vw;">Get Recommendations</a>
+      </form>
+  </div>
+  <br></br>
+
+</body>
+
+</html>

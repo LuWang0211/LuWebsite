@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <a class="navbar-brand" href="http://0.0.0.0:8080/#">WebSiteName</a>
+          <a class="navbar-brand" href="http://0.0.0.0:8080/home#">Home</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="http://0.0.0.0:8080/home#">Go Back</a></li>
+        <li class="active"><a href="https://github.com/LuWang0211/ResumeClassifier">Github</a></li>
+      </ul>
+    </div>
+</nav>
+
+  <body>
+    <div class="jumbotron text-center">
+        <h2>Based on the type of movies a candidate has acted in</h2> 
+    </div>
+
+    <nav class="navbar navbar-light bg-light static-top">
+      <div class="container">
+        <li>Step 1: Type a Resume Information or Upload a Resume</li>
+        <li>Step 2: Submit Resume</li>
+        <li>Step 3: Get Recommendations</li>
+      </div>
+    </nav>
+
+    <div class="container">
+        <h3>Resume Information</h3>
+
+        <label for="Resume1">Resume(upload method 1):</label>
+        <h4>Please paste the candidate's resume here:</h4>
+        {% if reminder1 != 'wait type' %}
+          <p>{{reminder1}}</p>
+        {% endif %}
+        <form action='/multilabel_recommendations', method='POST'>
+          <textarea class="form-control" rows="5" name="user_input_test" id="user_input_test">
+          Please input more than 250 words
+          </textarea>
+          <p></p>
+          <button type="submit" class="btn btn-lg btn-block" style= "width: 32vw;">Submit</button>
+        </form>
+
+        <p></p>
+
+        <label for="Resume2">Resume(upload method 2):</label>
+        <h4>Please choose a file from computer. Allowed file types are txt only</h4>
+        {% if reminder2 != 'wait type' %}
+          <p>{{reminder2}}</p>
+        {% endif %}
+
+        <p>
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+          {% endwith %}
+        </p>
+
+        <form action='/upload_file', method='POST', enctype="multipart/form-data">
+          <div class="col-sm-10">
+            <span class="control-fileupload">
+              <input type="file" name="file" id="file">
+            </span>
+          </div>
+          <br></br>
+            <button type="submit" class="btn btn-lg btn-block" style= "width: 32vw;">Submit</button>
+        </form>
+
+        <br />
+
+        
+        <div class="row">
+          <div class="panel panel-default prediction-result">
+            <div class="panel-heading">
+                <h3 class="panel-title">Prediction Result:</h3>
+            </div>
+            {% if predictions|length > 0 %}
+            <div class="panel-body">According to the prediction, the candiate can most likely be categorized to the following topics:
+              {% for key in predictions %}
+                  {% if predictions[key][0] == 1 %}
+                    <span class="badge badge-primary">{{key}}</span>
+                  {% endif %}
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    
+
+
+  </body>
+
+</html>
