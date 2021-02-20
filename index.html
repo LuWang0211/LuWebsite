@@ -58,7 +58,6 @@
 
 	<div class="animsition">
 
-
 		<!-- Switch Panel -->
 		<div id="switch">
 			<div class="content-switcher">
@@ -88,10 +87,6 @@
 		<div id="show" style="display: block;">
 			<div id="setting"></div> <!-- layout.css img url -->
 		</div>
-		<!-- Switch Panel -->
-
-		<!-- Switch Panel -->
-		<div id="settingtemp"><div class="icon-box"><a href="https://github.com/LuWang0211">&#xf09b;</a></div></div>
 		<!-- Switch Panel -->
 
 		<!-- MENU
@@ -130,7 +125,7 @@
 
 		<main class="cd-main-content">
 
-		<!-- SECTION
+		<!-- SECTION About ME
 		================================================== -->
 			<section class="section parallax-section parallax-section-padding-top-bottom-home" id="scroll-link-1">
 
@@ -148,8 +143,8 @@
 
 			</section>
 
-		<!-- SECTION
-		================================================== -->
+			<!-- SubSection About ME
+			================================================== -->
 			<section class="section white-section section-padding-top-bottom">
 				<div class="container">
 					<div class="one-third column skills-in-box white-section">
@@ -178,10 +173,8 @@
 				</div>
 			</section>
 
-
-	<!-- SECTION
-    ================================================== -->
-
+		<!-- SECTION Experience
+		================================================== -->
 			<section class="section grey-section section-padding-top-bottom" id="scroll-link-2">
 				<div class="container">
 					<div class="sixteen columns">
@@ -191,7 +184,7 @@
 					</div>
 					<div class="sixteen columns">
 						<div class="accordion">
-							<div class="accordion_in" data-scroll-reveal="enter left move 200px over 1s after 0.9s">
+							<div class="accordion_in" data-scroll-reveal="enter left move 200px over 1s after 0.3s">
 								<div class="acc_head white-section">Master of Science in Technology Innovation @ University
 									of Washington 2019.09-2020.12</div>
 								<div class="acc_content white-section">
@@ -204,14 +197,14 @@
 								</div>
 							</div>
 
-							<div class="accordion_in" data-scroll-reveal="enter left move 200px over 1s after 1.2s">
+							<div class="accordion_in" data-scroll-reveal="enter left move 200px over 1s after 0.3s">
 								<div class="acc_head white-section">Certificate of Data Science Immersive @ Galvanize Bootcamp Program 2019.05-2019.08</div>
 								<div class="acc_content white-section">
 									<p>Curriculum including Data Science, etc. </p>
 								</div>
 							</div>
 
-							<div class="accordion_in" data-scroll-reveal="enter left move 200px over 1s after 1.2s">
+							<div class="accordion_in" data-scroll-reveal="enter left move 200px over 1s after 0.3s">
 								<div class="acc_head white-section">Bachelor of Science in Electronic Information Science
 									and Technology @ XIDIAN University 2003.08-2007.07</div>
 								<div class="acc_content white-section">
@@ -225,7 +218,7 @@
 
 					<div class="sixteen columns">
 						<div class="accordion">
-							<div class="accordion_in" data-scroll-reveal="enter left move 200px over 1s after 0.9s">
+							<div class="accordion_in" data-scroll-reveal="enter left move 200px over 1s after 0.3s">
 								<div class="acc_head white-section">Human Resource Manager @ Bank of China Insurance
 									Co., Ltd. Henan Branch 2011.02-2017.03</div>
 								<div class="acc_content white-section">
@@ -235,7 +228,7 @@
 								</div>
 							</div>
 
-							<div class="accordion_in" data-scroll-reveal="enter left move 200px over 1s after 1.2s">
+							<div class="accordion_in" data-scroll-reveal="enter left move 200px over 1s after 0.3s">
 								<div class="acc_head white-section">Software Testing Engineer @ NEUSOFT 2010.03-2010.10
 								</div>
 								<div class="acc_content white-section">
@@ -250,7 +243,7 @@
 								</div>
 							</div>
 
-							<div class="accordion_in" data-scroll-reveal="enter left move 200px over 1s after 1.2s">
+							<div class="accordion_in" data-scroll-reveal="enter left move 200px over 1s after 0.3s">
 								<div class="acc_head white-section">Software Engineer @ Shanghai Chuwa Software CO.LTD
 									2007.07-2010.03</div>
 								<div class="acc_content white-section">
@@ -268,21 +261,25 @@
 				</div>
 			</section>
 
-			<!-- SECTION
-    ================================================== -->
+		<!-- SECTION Projects
+		================================================== -->
 
 			<section class="section white-section section-padding-top-bottom" id="scroll-link-3">
-				<div class="container">
-					<div class="sixteen columns">
-						<div class="section-title">
-							<h2>Somethings I've Built</h2>
-							<!-- <div class="subtitle">Creativity is intelligence having fun.</div> -->
-						</div>
+				<!-- Section Header -->
+				<div class="sixteen columns">
+					<div class="section-title">
+						<h2>Somethings I've Built</h2>
+						<!-- <div class="subtitle">Creativity is intelligence having fun.</div> -->
 					</div>
+				</div>
+
+				<!-- Project -->
+				<div class="container">
+					
 					<div class="seven columns">
-						<div class="full-image" href="cocobot.html">
-							<img src="images/indexpage/Cocobot.jpg"  alt="" >
-						</div>
+						<a  class="full-image" href="cocobot.html">
+							<img src="images/indexpage/Cocobot.jpg"  alt="">
+						</a>
 					</div>
 					<div class="nine columns">
 						<div class="section-title left">
@@ -292,21 +289,20 @@
 						<div class="services-boxes-3 interest-padding" >
 							<p> This project is part of an on-going study to develop Caring for Caregivers Online (COCO), a system that provides selfcare support to caregivers.
 								My team and I implemented one voice assistant via Alexa as an exploration of integrating voice interfaces into the COCO platform, 
-								to provide on-demand, empathetic, and tailored caregiving support.<a href="cocobot.html"> See more in detail</a> 
+								to provide on-demand, empathetic, and tailored caregiving support.Related paper “Integrating a Voice User Interface into a Virtual Therapy Platform” 
+								has been accepted to the <a class="subtitle-written">CHI 2021</a>Late-Breaking Work track. Expected published date will on May 2021.<a href="cocobot.html"> See more.</a> 
 							</p>
 						</div>
 						<div class="subtitle-written">
-							<p>Alexa Conversation SKills, React Native, Python, Typescript  
+							<p>Alexa Conversation SKills, React Native, Typescript, Firebase, AWS S3
 								<span class="icon-box"><a href="https://github.com/LuWang0211">&#xf09b;</a></span>
 							</p>
 						</div>
 					</div>
 				</div>
-			</section>
+				<div class="row"></div>
 
-		<!-- SECTION
-    		================================================== -->
-			<section class="section white-section section-padding-top-bottom">
+				<!-- Project -->
 				<div class="container">
 					<div class="nine columns">
 						<div class="section-title left">
@@ -317,7 +313,7 @@
 							<p> Due to pandemic, empowers general public to reduce grocery shopping time.
 								• Developed an Android app using React Native to quickly locate items and show shortest routes.
 								• Integrated Google Firebase ML Kit's text recognition API to detect aisle numbers for indoor localization.
-								<a href="quickfind.html"> See more in detail</a> 
+								<a href="quickfind.html"> See more</a> 
 							</p>
 						</div>
 						<div class="subtitle-written">
@@ -327,37 +323,19 @@
 						</div>
 					</div>
 					<div class="seven columns">
-						<div class="full-image" href="quickfind.html">
+						<a class="full-image" href="quickfind.html">
 							<img src="images/indexpage/QuickFind.jpg"  alt="" >
-						</div>
+						</a>
 					</div>
-					<!-- <div class="three columns" data-scroll-reveal="enter right move 200px over 1s after 0.3s">
-						<div class="full-image">
-							<img src="images/iphone2.png" alt="">
-						</div>
-					</div>
-					<div class="three columns" data-scroll-reveal="enter right move 200px over 1s after 0.3s">
-						<div class="full-image">
-							<img src="images/iphone3.png" alt="">
-						</div>
-					</div>
-					<div class="three columns" data-scroll-reveal="enter right move 200px over 1s after 0.3s">
-						<div class="full-image">
-							<img src="images/iphone4.png" alt="">
-						</div>
-					</div> -->
-
 				</div>
-			</section>
+				<div class="row"></div>
 
-			<!-- SECTION
-    ================================================== -->
-			<section class="section white-section section-padding-top-bottom">
+				<!-- Project -->
 				<div class="container">
 					<div class="seven columns">
-						<div class="full-image" href="resumeclassifier.html">
+						<a class="full-image" href="resumeclassifier.html">
 							<img src="images/indexpage/ResumeClassifier.jpg"  alt="" >
-						</div>
+						</a>
 					</div>
 					<div class="nine columns">
 						<div class="section-title left">
@@ -370,7 +348,7 @@
 								• Deployed via NLP, Multilabel and LDA approaches to classify actors.
 								• Developed website using Flask-Bootstrap for browsing actors’ data and responding to model inferences.
 								• Used AWS EC2 to host the Website.
-								<a href="resumeclassifier.html"> See more in detail</a> 
+								<a href="resumeclassifier.html"> See more</a> 
 							</p>
 						</div>
 						<div class="subtitle-written">
@@ -382,10 +360,10 @@
 				</div>
 			</section>
 
-			<!-- SECTION
+			<!-- SubSection Project Part 2
 			================================================== -->
 
-			<section class="section white-section section-padding-top-bottom">
+			<section class="section white-section section-padding-bottom">
 				<div class="container">
 					<div class="sixteen columns">
 						<div class="section-title">
@@ -444,7 +422,7 @@
 						<p><i class="icon-footer">&#xf041;</i>Redmond, WA</p>
 					</div>
 					<div class="four columns">
-						<p><i class="icon-footer">&#xf0e0;</i><a href="mailto:office@yoursite.com"
+						<p><i class="icon-footer">&#xf0e0;</i><a href="luwangdudu@gmail.com"
 								title="">luwangdudu@gmail.com</a></p>
 					</div>
 					<div class="four columns">
@@ -460,11 +438,12 @@
 
 		</main>
 
-		<div class="scroll-to-top">&#xf106;</div>
+		<div class="scroll-to-top" >&#xf106;</div>
+		<a class="side-contact-info" style="bottom: 120px;" href="luwangdudu@gmail.com">&#xf0e0;</a>
+		<a class="side-contact-info" style="bottom: 70px;" href="https://github.com/LuWang0211">&#xf09b;</a>
+		<a class="side-contact-info" style="bottom: 20px;" href="https://www.linkedin.com/in/lu-wang-917821183">&#xf0e1;</a>
 
 	</div>
-
-
 
 	<!-- JAVASCRIPT
     ================================================== -->
