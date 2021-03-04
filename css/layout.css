@@ -310,6 +310,7 @@ Main components
   display: block;
   width:90px;
   height:auto;
+  border-radius: 50%;
 }
 
 .cd-header-buttons {

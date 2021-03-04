@@ -155,7 +155,7 @@
 							<li><a href="#" class="current" data-filter="*" title="">show all</a></li>
 							<li><a href="#" data-filter=".teamwork" title="">What our team do</a></li>
 							<li><a href="#" data-filter=".personalword" title="">My Responsibilities</a></li>
-							<li><a href="#" data-filter=".prototypes" title="">Prototypes</a></li>
+							<li><a href="#" data-filter=".architecture" title="">Architecture</a></li>
 						</ul>
 					</div>
 				</div>
@@ -238,10 +238,22 @@
 								<div class="sixteen columns">
 									<div class="section-title left">
 										<h3>Our Solution - Pivot Version One to Version Two</h3>
-										<video width="640" controls src="images/quickfind/LAB2_M1.mp4" type="video/mp4"> 
-										</video>
 									</div>
+									<div class="container">
+										<video width="460px" controls src="images/quickfind/LAB2_M1.mp4" type="video/mp4"> </video>
+										<div class="eight columns">
+											<div class="services-boxes-3 interest-padding" >
+												<p>
+													Considering that the items are placed on the shelves of the relevant aisles according to categories, we could locate products' areas according to the user's shopping list and the store database information. 
+													Then we can carry out route planning through the preset map anchor points.
+													At the same time, we use the aisle information, including aisle number, label, etc., to locate. 
+												</p>
+											</div>
+										</div>
+									</div>
+
 								</div>
+
 							</div>
 						</div>
 					</div>
@@ -252,7 +264,8 @@
 							<div class="subtitle">I'm in charge of all software development and conduct with a team member on hardware design.</div>
 						</div>
 					</div>
-					
+
+					<!-- Sub Section -->
 					<div class="sixteen columns personalword">
 						<div class="section white-section">
 							<div class="container">
@@ -267,9 +280,11 @@
 										<h3>Device Development</h3>
 									</div>
 									<div class="services-boxes-3 interest-padding" >
-										<p>For the hardware part, I have configured raspberry pi and a compatible touch screen, and design all hardware components installation construction.
-										   For the software part, 
-											<span class="icon-box"><a href="https://gitlab.com/LuWang0211/cocobot_gix_mobileapp.git">&#xf09b;</a></span>
+										<p><strong>Hardware.</strong> I configured raspberry pi and a compatible touch screen, and corporation with the team to design hardware components installation constructions.
+										</p>
+										<p><strong>Software.</strong> I designed a desktop app using PyQt for managing shopping lists and showing shopping paths.
+											To detect the aisle number for indoor positioning, I used the OpenCV East text detection model and screened the retrieved information to confirm the user's current location. 
+											<span class="icon-box"><a href="https://github.com/LuWang0211/navigation">&#xf09b;</a></span>
 										</p>
 									</div>
 								</div>
@@ -282,21 +297,23 @@
 							<div class="container">
 								<div class="eight columns">
 									<div class="section-title left">
-										<div class="subtitle-written">Alexa Skills and Mobile App version, built by Alexa Conversation SKills and React Native</div>
+										<div class="subtitle-written">Version Two built by React Native and Firebase ML Kit</div>
 										<h3>MobileApp Development</h3>
 									</div>
 									<div class="services-boxes-3 interest-padding" >
-										<p> Based on the result of mock-up version testing , I developed our first cocobot alexa skill version via Alexa Skill Conversation (Beta). 
-											It uses AWS lambda functions to connect the dialogue model, and stored self-care resource data in AWS S3. 
-											In the model training, I use several dialogues as example data in the scenario and set the coco API functions to annotate the dialogue 
-											to capture potential conversation flows. Here is a system diagram, which references from Alexa skill Official Doc.
-											Skills Repos: <span class="icon-box"><a href="https://github.com/LuWang0211/CocobotAlexaSkill_2020.git">&#xf09b;</a></span>
+										<!-- <p> By creating a user's shopping list on the mobile application, our navigation app will search for the aisle information of the desired items in the database and plan the route. 
+											On Clicking the button to start navigation, the app displays a navigation route, scans the surrounding environment through image processing, detects the aisle number and label, and corrects the position through the beacon signal and locating the user's real-time position as well. When the user is close to the desired product, it prompts the information about that product. If the user fails to follow the planned route for shopping, the system re-routes the path based on the user's current location.
+											<span class="icon-box"><a href="https://github.com/LuWang0211/GroceryNavigation_MobileApp">&#xf09b;</a></span>
+										</p> -->
+										<p>
+											To do grocery store shopping, except getting shopping list function ,our main function also include doing pathfinding and locating to navigation. For pathfinding, I used DFS to do pathfinding as before, but optimized map and anchor data. For locating, using number detection, which is another challenge during the development.  Since we use react native platforms, we can leverage a firebase ml kit to save our time for a while, but the challenge is that it will cause a storage problem since it will autosave image file for a while,  I need to delete them in a certain time.
+											<span class="icon-box"><a href="https://github.com/LuWang0211/GroceryNavigation_MobileApp">&#xf09b;</a></span>
 										</p>
 									</div>
 								</div>
 								<div class="eight columns">
 									<div class="full-image" href="cocobot.html">
-										<img src="images/cocobot/MobileApp.jpg"  alt="" >
+										<img src="images/quickfind/MobileAPP.jpg"  alt="" >
 									</div>
 								</div>
 							</div>
@@ -304,40 +321,25 @@
 					</div>
 
 					<!-- Sub Section -->
-					<div class="sixteen columns prototypes">
+					<div class="sixteen columns architecture">
 						<div class="section-title">
-							<h3>prototype and features</h3>
+							<h3>Software Architecture</h3>
 						</div>
 					</div>
 					
-					<div class="sixteen columns prototypes">
+					<div class="sixteen columns architecture">
 						<div class="section white-section">
 							<div class="container">
 								<div class="eight columns">
 									<div class="full-image">
-										<img src="images/cocobot/SoftwareArchitecture.jpg"  alt="" >
+										<img src="images/quickfind/SoftwareArchitecture.jpg"  alt="" >
 									</div>
 								</div>
 								<div class="eight columns">
-									<div class="full-image">
-										<img src="images/cocobot/solution1.jpg"  alt="" >
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="sixteen columns prototypes">
-						<div class="section white-section">
-							<div class="container">
-								<div class="eight columns">
-									<div class="full-image">
-										<img src="images/cocobot/solution2.jpg"  alt="" >
-									</div>
-								</div>
-								<div class="eight columns">
-									<div class="full-image">
-										<img src="images/cocobot/solution3.jpg"  alt="" >
+									<div class="services-boxes-3 interest-padding" >
+										<p> By creating a user's shopping list on the mobile application, our navigation app will search for the aisle information of the desired items in the database and plan the route. 
+											On Clicking the button to start navigation, the app displays a navigation route, scans the surrounding environment through image processing, detects the aisle number and label, and corrects the position through the beacon signal and locating the user's real-time position as well. When the user is close to the desired product, it prompts the information about that product. If the user fails to follow the planned route for shopping, the system re-routes the path based on the user's current location.
+										</p>
 									</div>
 								</div>
 							</div>
