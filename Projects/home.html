@@ -59,7 +59,7 @@
         </div>
         
       </div>
-      <form action='/multilabel', method='POST'>
+      <form action='./templates/multilabel_recommendations.html', method='POST'>
         <button type="submit" class="btn btn-lg btn-block" style= "width: 32vw;">Get Recommendations</button>
       </form>
   </div>
@@ -71,9 +71,9 @@
         <div class="panel-body">The LDA topic model is unsupervised learning of the actor/actress information. It tries to group together similiar actors based on the text in their resumes</div>
       </div>
       <form action='/results_lda', method='POST'>
-        <a class="btn btn-primary btn-lg" href="/results_lda" role="button" style="width: 30vw;">Explore LDA</a>
+        <a class="btn btn-primary btn-lg" href="./templates/results_lda.html" role="button" style="width: 30vw;">Explore LDA</a>
         <p></p>
-        <a class="btn btn-primary btn-lg" href="/recommendations_lda" role="button" style="width: 30vw;">Get Recommendations</a>
+        <a class="btn btn-primary btn-lg" href="./templates/recommendations_lda.html" role="button" style="width: 30vw;">Get Recommendations</a>
       </form>
   </div>
   <br></br>
